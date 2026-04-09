@@ -29,11 +29,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-3. Configure environment variables:
-
-```powershell
-Copy-Item .env.example .env
-```
+3. Create a `.env` file in the project root.
 
 4. Ensure `.env` contains valid Cloudflare credentials.
 Required:
