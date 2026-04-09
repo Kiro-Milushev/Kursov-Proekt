@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Analysis Report | ContractClear AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-tertiary-fixed-dim selection:text-primary">
+  <nav class="bg-[#f7f9fb]/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl shadow-[#191c1e]/5">
+    <div class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
+      <a class="text-2xl font-extrabold tracking-tighter text-[#000613]" href="/">ContractClear AI</a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a class="text-[#515f74] pb-1 hover:text-[#001f3f] transition-colors duration-300" href="#summary">Features</a>
+        <a class="text-[#515f74] pb-1 hover:text-[#001f3f] transition-colors duration-300" href="#red-flags">How it Works</a>
+        <a class="text-[#515f74] pb-1 hover:text-[#001f3f] transition-colors duration-300" href="#footer-info">FAQ</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm active:scale-95 transition-all duration-200" href="/upload">New Analysis</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-8 py-12">
+    <header class="mb-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <span class="text-secondary font-semibold tracking-widest uppercase mb-2 block">DUE DILIGENCE COMPLETE</span>
+          <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-primary">Analysis Report</h1>
+          <p class="text-on-surface-variant mt-4 text-lg max-w-2xl leading-relaxed">Precision audit for <span class="font-bold text-primary italic" id="result-filename">Uploaded document</span>.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-4 flex flex-col gap-8">
+        <section class="glass-panel rounded-full border border-outline-variant/15 p-10 flex flex-col items-center text-center shadow-2xl shadow-primary/5">
+          <div class="relative w-64 h-64 mb-8">
+            <svg class="w-full h-full transform -rotate-90">
+              <circle class="text-gray-200" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-width="12"></circle>
+              <circle class="text-error" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-dasharray="691" stroke-dashoffset="350" stroke-width="12" id="risk-ring"></circle>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="text-7xl font-extrabold text-primary leading-none" id="risk-score">0.0</span>
+              <span class="text-sm font-bold text-secondary uppercase tracking-widest mt-1">Risk Score</span>
+            </div>
+          </div>
+          <div class="bg-error-container text-on-error-container px-4 py-1.5 rounded-md text-sm font-extrabold tracking-tighter uppercase mb-4" id="risk-label">RISK ANALYSIS</div>
+          <p class="text-on-surface-variant text-sm leading-relaxed px-4" id="summary-side">Awaiting data.</p>
+        </section>
+      </div>
+
+      <div class="lg:col-span-8 space-y-8">
+        <article class="bg-surface-container-lowest rounded-full border border-outline-variant/15 p-10 shadow-sm" id="summary">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="bg-primary-container p-3 rounded-xl"><span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">auto_awesome</span></div>
+            <h2 class="text-3xl font-extrabold text-primary tracking-tight">Plain English Summary</h2>
+          </div>
+          <div class="space-y-6 text-on-surface text-lg leading-relaxed font-light">
+            <p id="summary-main">No analysis found. Please run a scan first.</p>
+          </div>
+        </article>
+
+        <section id="red-flags">
+          <div class="flex items-center justify-between mb-8 px-2">
+            <h2 class="text-3xl font-extrabold text-primary tracking-tight">Red Flags</h2>
+            <span class="text-error font-bold flex items-center gap-2"><span class="material-symbols-outlined">warning</span><span id="red-flag-count">0 Issues</span></span>
+          </div>
+          <div class="space-y-6" id="red-flags-container"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-[#000613] w-full mt-20 border-t border-white/5" id="footer-info">
+    <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-7xl mx-auto">
+      <div class="mb-8 md:mb-0"><div class="text-lg font-bold text-[#5cd5f8] mb-2">ContractClear AI</div><p class="text-[#515f74] text-sm tracking-wide">Architectural Arbiter Design.</p></div>
+    </div>
+  </footer>
+  <script src="/static/js/result.js"></script>
+</body>
+</html>

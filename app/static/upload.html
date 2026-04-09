@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Upload Contract | ContractClear AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Inter:wght@300..700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = { darkMode: "class" };
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); }
+  </style>
+</head>
+<body class="bg-background text-on-background selection:bg-tertiary-fixed-dim selection:text-on-tertiary-fixed min-h-screen flex flex-col">
+  <header class="bg-[#f7f9fb]/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl shadow-[#191c1e]/5">
+    <div class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
+      <a class="text-2xl font-extrabold tracking-tighter text-[#000613]" href="/">ContractClear AI</a>
+      <nav class="hidden md:flex gap-10 items-center">
+        <a class="text-[#515f74] pb-1 hover:text-[#001f3f] transition-colors duration-300" href="#requirements">Features</a>
+        <a class="text-[#515f74] pb-1 hover:text-[#001f3f] transition-colors duration-300" href="#upload-zone">How it Works</a>
+        <a class="text-[#515f74] pb-1 hover:text-[#001f3f] transition-colors duration-300" href="#help">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">help_outline</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center px-6 py-12 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-5">
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary rounded-full blur-[120px] -mr-96 -mt-96"></div>
+      <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-tertiary-fixed-dim rounded-full blur-[100px] -ml-64 -mb-64"></div>
+    </div>
+
+    <section class="max-w-4xl w-full z-10">
+      <div class="mb-16 md:pl-12 border-l-2 border-primary" id="help">
+        <span class="text-secondary text-xs tracking-widest uppercase mb-4 block">Phase 1: Analysis Initialization</span>
+        <h1 class="text-primary text-5xl md:text-7xl font-bold tracking-tight mb-6">Upload Contract</h1>
+        <p class="text-secondary text-lg max-w-xl leading-relaxed">Our AI architectural engine parses legal prose to identify hidden risks and structural imbalances.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div class="md:col-span-4 space-y-8" id="requirements">
+          <div class="bg-surface-container-low p-8 rounded-full">
+            <h3 class="text-primary font-bold text-lg mb-4">Requirements</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-tertiary-fixed-dim text-xl">check_circle</span><span class="text-sm text-secondary leading-snug">Accepts .PDF and .DOCX extensions only</span></li>
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-tertiary-fixed-dim text-xl">check_circle</span><span class="text-sm text-secondary leading-snug">Maximum file size of 25MB per analysis</span></li>
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-tertiary-fixed-dim text-xl">check_circle</span><span class="text-sm text-secondary leading-snug">OCR capabilities for scanned documents</span></li>
+            </ul>
+          </div>
+
+          <div class="p-8 border border-outline-variant/20 rounded-full" id="security">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="material-symbols-outlined text-primary">security</span>
+              <span class="text-sm font-bold text-primary">Encrypted Vault</span>
+            </div>
+            <p class="text-xs text-on-surface-variant/70 leading-relaxed">Your contracts are processed in an isolated environment and automatically purged after analysis completion.</p>
+          </div>
+        </div>
+
+        <div class="md:col-span-8 group" id="upload-zone">
+          <div class="bg-surface-container-low hover:bg-surface-container-high transition-all duration-500 rounded-full p-2 relative">
+            <label class="cursor-pointer block" for="file-upload">
+              <div class="border-2 border-dashed border-outline-variant/30 group-hover:border-tertiary-fixed-dim rounded-full flex flex-col items-center justify-center py-24 px-12 transition-colors duration-500 bg-surface-container-lowest">
+                <div class="w-20 h-20 bg-primary-container/5 rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                  <span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+                </div>
+                <h2 class="text-2xl font-bold text-primary mb-2 text-center">Drop your contract here</h2>
+                <p class="text-secondary text-center mb-8">or click to browse local directory</p>
+                <div class="flex gap-4">
+                  <div class="px-4 py-2 bg-surface-container-high rounded-lg text-xs font-mono text-secondary tracking-tighter">.PDF</div>
+                  <div class="px-4 py-2 bg-surface-container-high rounded-lg text-xs font-mono text-secondary tracking-tighter">.DOCX</div>
+                </div>
+              </div>
+              <input accept=".pdf,.docx" class="hidden" id="file-upload" type="file"/>
+            </label>
+          </div>
+
+          <p class="mt-3 text-sm text-secondary hidden" id="selected-file-label"></p>
+          <p class="mt-2 text-sm text-error hidden" id="upload-error"></p>
+
+          <div class="mt-8 flex justify-end">
+            <button class="group relative px-10 py-5 bg-outline-variant/30 text-on-surface-variant/50 cursor-not-allowed rounded-md font-bold tracking-tight overflow-hidden transition-all duration-300" disabled id="proceed-button">
+              <div class="flex items-center gap-3">
+                <span>Proceed to Analysis</span>
+                <span class="material-symbols-outlined text-xl">arrow_forward</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#000613] w-full mt-20 border-t border-white/5">
+    <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-7xl mx-auto">
+      <div class="mb-8 md:mb-0">
+        <div class="text-lg font-bold text-[#5cd5f8] mb-2">ContractClear AI</div>
+        <div class="font-inter text-sm tracking-wide text-[#f7f9fb] opacity-60">© 2024 ContractClear AI. Architectural Arbiter Design.</div>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8">
+        <a class="font-inter text-sm tracking-wide text-[#515f74] hover:text-[#f7f9fb] transition-all" href="#security">Terms of Service</a>
+        <a class="font-inter text-sm tracking-wide text-[#515f74] hover:text-[#f7f9fb] transition-all" href="#requirements">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/static/js/upload.js"></script>
+</body>
+</html>

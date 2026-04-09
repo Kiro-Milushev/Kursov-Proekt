@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Define Role | ContractClear AI</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .ink-gradient { background: linear-gradient(135deg, #000613 0%, #001f3f 100%); }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+  <header class="bg-[#f7f9fb]/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl shadow-[#191c1e]/5">
+    <div class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
+      <a class="text-2xl font-extrabold tracking-tighter text-[#000613]" href="/">ContractClear AI</a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a class="text-[#515f74] pb-1 hover:text-[#001f3f] transition-colors duration-300" href="#context-form">Features</a>
+        <a class="text-[#515f74] pb-1 hover:text-[#001f3f] transition-colors duration-300" href="#insights">How it Works</a>
+        <a class="text-[#515f74] pb-1 hover:text-[#001f3f] transition-colors duration-300" href="#footer-faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow flex flex-col items-center px-6 pt-12 md:pt-24 max-w-5xl mx-auto w-full">
+    <div class="w-full max-w-xl mb-12 flex items-center justify-between">
+      <div class="flex flex-col items-center gap-2"><div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm">1</div><span class="text-xs font-semibold text-primary uppercase tracking-widest">Upload</span></div>
+      <div class="h-[2px] flex-grow mx-4 bg-primary-container/20 relative"><div class="absolute inset-0 bg-primary w-full"></div></div>
+      <div class="flex flex-col items-center gap-2"><div class="w-10 h-10 rounded-full border-4 border-tertiary-fixed-dim bg-primary text-on-primary flex items-center justify-center font-bold text-sm">2</div><span class="text-xs font-bold text-primary uppercase tracking-widest">Define Role</span></div>
+      <div class="h-[2px] flex-grow mx-4 bg-surface-container-high"></div>
+      <div class="flex flex-col items-center gap-2 opacity-40"><div class="w-8 h-8 rounded-full bg-surface-container-high text-secondary flex items-center justify-center font-bold text-sm">3</div><span class="text-xs font-semibold text-secondary uppercase tracking-widest">Analysis</span></div>
+    </div>
+
+    <div class="w-full flex flex-col md:flex-row gap-12 items-start mb-16" id="context-form">
+      <div class="md:w-1/2">
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.95] text-primary mb-6">Define <br/><span class="text-on-primary-container">Role.</span></h1>
+        <p class="text-lg text-secondary leading-relaxed max-w-md">To accurately interpret contractual risk, our AI needs your legal/professional role context.</p>
+      </div>
+
+      <div class="md:w-1/2 w-full glass-panel p-8 rounded-xl shadow-2xl shadow-[#191c1e]/8 flex flex-col gap-6 relative overflow-hidden">
+        <div class="relative">
+          <label class="block text-sm font-bold text-primary uppercase tracking-widest mb-4" for="role-input">What is your role?</label>
+          <textarea class="w-full bg-surface-container-high border-none rounded-xl p-5 text-on-surface focus:ring-2 focus:ring-primary-container transition-all placeholder:text-outline-variant resize-none text-lg leading-relaxed" id="role-input" placeholder="e.g., Principal Architect overseeing Phase 2 construction documentation..." rows="5"></textarea>
+          <div class="mt-3 flex justify-between items-center px-1">
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-secondary">history_edu</span><span class="text-xs font-medium text-secondary">Minimum 15 characters required</span></div>
+            <div class="text-xs font-bold text-primary-container/40" id="context-counter">0 / 15</div>
+          </div>
+          <p class="mt-2 text-sm text-error hidden" id="context-error"></p>
+          <p class="mt-2 text-sm text-secondary" id="current-upload-label"></p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 p-3 bg-error-container/20 rounded-lg"><span class="material-symbols-outlined text-error text-xl" style="font-variation-settings: 'FILL' 1;">block</span><span class="text-sm font-semibold text-on-error-container">No URLs allowed</span></div>
+        </div>
+
+        <div class="pt-4">
+          <button class="w-full ink-gradient text-on-primary py-5 rounded-md font-bold text-lg flex items-center justify-center gap-3 group transition-transform active:scale-95 shadow-xl shadow-primary/20" id="scan-button">
+            <span>Scan for Risks</span>
+            <span class="material-symbols-outlined hidden" id="scan-spinner">autorenew</span>
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" id="scan-arrow">arrow_forward_ios</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full border-t border-outline-variant/10 pt-16 pb-20" id="insights">
+      <div class="space-y-4"><div class="w-12 h-1 bg-tertiary-fixed-dim"></div><h4 class="text-xl font-bold text-primary">Liability Limits</h4><p class="text-sm text-secondary leading-relaxed">Risk weighting based on your role.</p></div>
+      <div class="space-y-4"><div class="w-12 h-1 bg-primary"></div><h4 class="text-xl font-bold text-primary">Standard of Care</h4><p class="text-sm text-secondary leading-relaxed">Flags deviations from common standards.</p></div>
+      <div class="space-y-4"><div class="w-12 h-1 bg-secondary-fixed-dim"></div><h4 class="text-xl font-bold text-primary">Risk Weighting</h4><p class="text-sm text-secondary leading-relaxed">Different roles mean different impact.</p></div>
+    </div>
+  </main>
+
+  <footer class="bg-[#000613] text-[#f7f9fb] w-full mt-20 border-t border-white/5" id="footer-faq">
+    <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-7xl mx-auto">
+      <div class="mb-8 md:mb-0"><div class="text-lg font-bold text-[#5cd5f8] mb-2">ContractClear AI</div><p class="text-xs text-[#515f74] max-w-xs tracking-wide">Legal clarity through machine-led precision.</p></div>
+    </div>
+  </footer>
+  <script src="/static/js/context.js"></script>
+</body>
+</html>
