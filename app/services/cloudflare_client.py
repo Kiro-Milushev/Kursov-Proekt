@@ -78,9 +78,29 @@ class CloudflareAIClient:
         try:
             parsed = json.loads(content)
         except json.JSONDecodeError as exc:
-            raise InvalidCloudflareResponseError("The model returned invalid JSON.") from exc
+            cleaned_content = self._extract_json_object(content)
+            try:
+                parsed = json.loads(cleaned_content)
+            except json.JSONDecodeError as inner_exc:
+                raise InvalidCloudflareResponseError("The model returned invalid JSON.") from inner_exc
 
         if not isinstance(parsed, dict):
             raise InvalidCloudflareResponseError("The model response must be a JSON object.")
 
         return parsed
+
+    def _extract_json_object(self, content: str) -> str:
+        """Extract a likely JSON object from fenced or mixed model output."""
+
+        stripped = content.strip()
+        if stripped.startswith("```"):
+            stripped = stripped.removeprefix("```json").removeprefix("```").strip()
+            if stripped.endswith("```"):
+                stripped = stripped[:-3].strip()
+
+        start_index = stripped.find("{")
+        end_index = stripped.rfind("}")
+        if start_index != -1 and end_index != -1 and end_index > start_index:
+            return stripped[start_index : end_index + 1]
+
+        return stripped
